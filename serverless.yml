@@ -1,0 +1,13 @@
+service: myservice
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: production
+  profile: suvankar-aws-profile
+functions:
+  hello:
+    handler: handler.hello
+    events:
+     - http:
+         path: users/create
+         method: get
